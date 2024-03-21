@@ -50,11 +50,11 @@ resource "aws_s3_bucket_website_configuration" "blog" {
 
 # Upload HTML files to S3
 resource "aws_s3_object" "upload_object" {
-  for_each      = fileset("../../html/", "*")
+  for_each      = fileset("html/", "*")
   bucket        = aws_s3_bucket.week1-bucket.id
   key           = each.value
-  source        = "../../html/${each.value}"
-  etag          = filemd5("../../html/${each.value}")
+  source        = "html/${each.value}"
+  etag          = filemd5("html/${each.value}")
   content_type  = "text/html"
   depends_on = [ aws_s3_bucket.week1-bucket ]
 }
