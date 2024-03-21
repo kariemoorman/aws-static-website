@@ -2,7 +2,7 @@
 
 ### WEEK 1: Static Website with CI/CD Implementation
 
-<p align='center'><img src='/images/week1.png'></p>
+<p align='center'><img src='/images/week_1.png'></p>
 
 
 #### IaC & CI/CD
