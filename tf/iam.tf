@@ -1,4 +1,4 @@
-
+# Create a policy that allows public read access to the bucket
 resource "aws_s3_bucket_policy" "week1-s3-policy" {
   bucket = aws_s3_bucket.week1-bucket.id
   policy = jsonencode({
@@ -9,8 +9,10 @@ resource "aws_s3_bucket_policy" "week1-s3-policy" {
             "Effect": "Allow",
             "Principal": "*",
             "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::mookarie-cloudops-w1/*"
+            "Resource": "${aws_s3_bucket.week1-bucket.arn}/*"
         }
       ]
     })
 }
+
+

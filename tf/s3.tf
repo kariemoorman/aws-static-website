@@ -8,6 +8,16 @@ resource "aws_s3_bucket" "week1-bucket" {
   }
 }
 
+# Create a block public access configuration
+resource "aws_s3_bucket_public_access_block" "block" {
+  bucket = aws_s3_bucket.week1-bucket.id
+
+  block_public_acls       = false
+  block_public_policy     = false
+  ignore_public_acls      = false
+  restrict_public_buckets = false
+}
+
 # Add S3 Bucket Versioning
 resource "aws_s3_bucket_versioning" "week1_bucket_versioning" {
   bucket = aws_s3_bucket.week1-bucket.id
@@ -15,20 +25,6 @@ resource "aws_s3_bucket_versioning" "week1_bucket_versioning" {
   versioning_configuration {
     status = "Enabled"
   }
-}
-
-# Create S3 ACL
-resource "aws_s3_bucket_acl" "bucket_acl" {
-  bucket = aws_s3_bucket.bucket.id
-  acl    = "private"
-}
-
-# ACL: Block public access
-resource "aws_s3_account_public_access_block" "week1-bucket-acl" {
-  block_public_acls       = true
-  block_public_policy     = true
-  ignore_public_acls      = true
-  restrict_public_buckets = false
 }
 
 # Encrypt S3 bucket using SSE-S3
