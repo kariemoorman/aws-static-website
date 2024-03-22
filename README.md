@@ -24,11 +24,11 @@ http://mookarie-cloudops-w1.s3-website-us-east-1.amazonaws.com
 
 <br> 
 
-- Current Issues: 
+- <i>Current Issues: 
     - No custom domain name.
     - No cache for static files.
     - Public bucket; not aligned with security best practices.
-    - Does not support HTTPS.
+    - Does not support HTTPS.</i>
 
 <br> 
 
