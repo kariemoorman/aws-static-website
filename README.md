@@ -8,7 +8,8 @@
 #### IMPLEMENTATION
 
 #### STEP 1: 
-- Build S3 bucket, write HTML to S3, add READ policy to S3, and configure static website documents using Terraform (see [step1](/tf/step1/)).
+- Provision S3 bucket, write HTML to S3, add READ policy to S3, and configure static website documents using Terraform (see [step1](/tf/step1/)).
+
 
 ```tf
 terraform init # Initialize working directory
@@ -17,7 +18,7 @@ terraform plan # Preview changes to be made
 terraform apply -auto-approve # Apply changes to infrastructure
 ```
 
-- Outcome: 
+- <b>Outcome:</b> 
 http://mookarie-cloudops-w1.s3-website-us-east-1.amazonaws.com 
 
 <p align='center'><img src='/images/http_website.png' alt='http-site' width='60%'/></p>
@@ -42,7 +43,7 @@ terraform plan # Preview changes to be made
 terraform apply -auto-approve # Apply changes to infrastructure
 ```
 
-- Outcome (before Route53): https://d1v23uzmtzdfq0.cloudfront.net
+- <b>Outcome (before Route53):</b> https://d1v23uzmtzdfq0.cloudfront.net
 
 <p align='center'><img src='/images/cloudfront_website.png' alt='cf-site' width='60%'></p>
 
