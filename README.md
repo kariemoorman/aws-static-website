@@ -63,7 +63,7 @@ terraform destroy -auto-approve
 ---
 
 #### RESOURCES 
-- <b>Challenge Source:</b> https://github.com/piyushsachdeva/10weeksofcloudops
+- <b>Challenge Source:</b> [10weeksofcloudops](https://github.com/piyushsachdeva/10weeksofcloudops)
 - <b>Cloud Platform:</b> [AWS](https://aws.amazon.com) 
 - <b>IaC Tooling:</b> [Terraform](https://www.terraform.io)
 - <b>CI/CD:</b> [Github Actions](https://docs.github.com/en/actions)
