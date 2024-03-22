@@ -51,6 +51,8 @@ terraform apply -auto-approve # Apply changes to infrastructure
 #### STEP 3:
 - Integrate AWS with Github Actions:
     - Create Github User in AWS (see [step3](/tf/step3/)).
+    - Create Access Keys for Github User.
+    - Add Access Keys to Github Secrets.
     - Sync Github Repo to S3 (see [sync_to_s3.yml](https://github.com/kariemoorman/10weeksofcloudops_w1/tree/main/.github/workflows/sync_to_s3.yml)).
 
 <br> 
