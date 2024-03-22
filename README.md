@@ -5,13 +5,9 @@
 <p align='center'><img src='/images/week_1.png'></p>
 
 
-#### IaC & CI/CD
-- <b>Terraform:</b> [tf](/tf/)
-- <b>Github Actions Workflow:</b> [deploy.yml](/.github/workflows/deploy.yml)
+#### IMPLEMENTATION
 
-#### Implementation
-
-##### Step 1: 
+#### STEP 1: 
 - Build S3 bucket, write HTML to S3, add READ policy to S3, and configure static website documents using Terraform (see [step1](/tf/step1/)).
 
 ```tf
@@ -34,7 +30,7 @@ http://mookarie-cloudops-w1.s3-website-us-east-1.amazonaws.com
     - Public bucket; not aligned with security best practices.
     - Does not support HTTPS.
 
-##### Step 2: 
+#### STEP 2: 
 - Configure Cloudfront Distribution (see [step2_cf-only](/tf/step2_cf-only/)), Route53 and ACM using Terraform (see [step2_cf_rt53](/tf/step2_cf_rt53/)).
 
 ```tf
@@ -51,18 +47,18 @@ terraform apply -auto-approve # Apply changes to infrastructure
 
 <br>
 
-##### Step 3:
+#### STEP 3:
 - Integrate AWS with Github Actions.
 
 
-##### Step 4:
+#### STEP 4:
 - Tear down infrastructure using Terraform.
 ```tf
 terraform destroy -auto-approve
 ```
 ---
 
-#### Resources 
+#### RESOURCES 
 - <b>Challenge Source:</b> https://github.com/piyushsachdeva/10weeksofcloudops
 - <b>Cloud Platform:</b> [AWS](https://aws.amazon.com) 
 - <b>IaC Tooling:</b> [Terraform](https://www.terraform.io)
