@@ -28,8 +28,14 @@ http://mookarie-cloudops-w1.s3-website-us-east-1.amazonaws.com
 
 <br> 
 
+- Current Issues: 
+    - Not a custom domain.
+    - No cache for static files.
+    - Public bucket; not aligned with security best practices.
+    - Does not support HTTPS.
+
 ##### Step 2: 
-- Configure Cloudfront Distribution and Route53 using Terraform (see [step2](/tf/step2/)).
+- Configure Cloudfront Distribution (see [step2_cf-only](/tf/step2_cf-only/)), Route53 and ACM using Terraform (see [step2_cf_rt53](/tf/step2_cf_rt53/)).
 
 ```tf
 terraform init # Initialize working directory
@@ -38,6 +44,13 @@ terraform plan # Preview changes to be made
 terraform apply -auto-approve # Apply changes to infrastructure
 ```
 
+- Outcome (before Route53): https://d1v23uzmtzdfq0.cloudfront.net
+
+<p align='center'><img src='/images/cloudfront_website.png' alt='cf-site'></p>
+
+
+<br>
+
 ##### Step 3:
 - Integrate AWS with Github Actions.
 
@@ -45,9 +58,6 @@ terraform apply -auto-approve # Apply changes to infrastructure
 ##### Step 4:
 - Tear down infrastructure using Terraform.
 ```tf
-cd tf/step2
-terraform destroy -auto-approve
-cd tf/step1
 terraform destroy -auto-approve
 ```
 ---
