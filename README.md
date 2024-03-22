@@ -30,6 +30,8 @@ http://mookarie-cloudops-w1.s3-website-us-east-1.amazonaws.com
     - Public bucket; not aligned with security best practices.
     - Does not support HTTPS.
 
+<br> 
+
 #### STEP 2: 
 - Configure Cloudfront Distribution (see [step2_cf-only](/tf/step2_cf-only/)), Route53 and ACM using Terraform (see [step2_cf_rt53](/tf/step2_cf_rt53/)).
 
@@ -51,6 +53,7 @@ terraform apply -auto-approve # Apply changes to infrastructure
     - Create Github User in AWS: [step3](/tf/step3/)
     - Sync to S3: [sync_to_s3.yml](https://github.com/kariemoorman/10weeksofcloudops_w1/tree/main/.github/workflows/sync_to_s3.yml)
 
+<br> 
 
 #### STEP 4:
 - Tear down infrastructure using Terraform.
