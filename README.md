@@ -24,7 +24,7 @@ terraform apply -auto-approve # Apply changes to infrastructure
 - Outcome: 
 http://mookarie-cloudops-w1.s3-website-us-east-1.amazonaws.com 
 
-<p align='center'><img src='/images/http_website.png' alt='http-site'/></p>
+<p align='center'><img src='/images/http_website.png' alt='http-site' width='60%'/></p>
 
 <br> 
 
@@ -46,7 +46,7 @@ terraform apply -auto-approve # Apply changes to infrastructure
 
 - Outcome (before Route53): https://d1v23uzmtzdfq0.cloudfront.net
 
-<p align='center'><img src='/images/cloudfront_website.png' alt='cf-site'></p>
+<p align='center'><img src='/images/cloudfront_website.png' alt='cf-site' width='60%'></p>
 
 
 <br>
