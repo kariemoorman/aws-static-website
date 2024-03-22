@@ -25,7 +25,7 @@ http://mookarie-cloudops-w1.s3-website-us-east-1.amazonaws.com
 <br> 
 
 - Current Issues: 
-    - Not a custom domain.
+    - No custom domain name.
     - No cache for static files.
     - Public bucket; not aligned with security best practices.
     - Does not support HTTPS.
@@ -44,13 +44,12 @@ terraform apply -auto-approve # Apply changes to infrastructure
 
 <p align='center'><img src='/images/cloudfront_website.png' alt='cf-site' width='60%'></p>
 
-
 <br>
 
 #### STEP 3:
-- Integrate AWS with Github Actions.
-- Create Github User in AWS: [step3](/tf/step3/)
-- Sync to S3: [sync_to_s3.yml](https://github.com/kariemoorman/10weeksofcloudops_w1/tree/main/.github/workflows/sync_to_s3.yml)
+- Integrate AWS with Github Actions:
+    - Create Github User in AWS: [step3](/tf/step3/)
+    - Sync to S3: [sync_to_s3.yml](https://github.com/kariemoorman/10weeksofcloudops_w1/tree/main/.github/workflows/sync_to_s3.yml)
 
 
 #### STEP 4:
