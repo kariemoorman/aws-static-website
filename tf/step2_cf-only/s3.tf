@@ -62,6 +62,8 @@ resource "aws_s3_object" "upload_object" {
 # Create Log bucket
 resource "aws_s3_bucket" "log_bucket" {
   bucket = "tf-log-bucket"
+  acl    = "private" 
+  ignore_public_acls = true
 }
 
 # Add ACL
@@ -73,7 +75,6 @@ resource "aws_s3_bucket_acl" "log_bucket_acl" {
 # Add versioning
 resource "aws_s3_bucket_versioning" "log_bucket_versioning" {
   bucket = aws_s3_bucket.log_bucket.id
-
   versioning_configuration {
     status = "Enabled"
   }
