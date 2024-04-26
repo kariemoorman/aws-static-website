@@ -64,6 +64,12 @@ resource "aws_s3_bucket" "log_bucket" {
   bucket = "tf-log-bucket"
 }
 
+# Create a block public access configuration
+resource "aws_s3_bucket_public_access_block" "log_block" {
+  bucket = aws_s3_bucket.log_bucket.id
+  ignore_public_acls      = true
+}
+
 # Add ACL
 resource "aws_s3_bucket_acl" "log_bucket_acl" {
   bucket = aws_s3_bucket.log_bucket.id
@@ -73,7 +79,6 @@ resource "aws_s3_bucket_acl" "log_bucket_acl" {
 # Add versioning
 resource "aws_s3_bucket_versioning" "log_bucket_versioning" {
   bucket = aws_s3_bucket.log_bucket.id
-
   versioning_configuration {
     status = "Enabled"
   }
@@ -82,7 +87,6 @@ resource "aws_s3_bucket_versioning" "log_bucket_versioning" {
 # Add logging
 resource "aws_s3_bucket_logging" "s3log" {
   bucket = aws_s3_bucket.week1-bucket.id
-
   target_bucket = aws_s3_bucket.log_bucket.id
   target_prefix = "log/"
 }
