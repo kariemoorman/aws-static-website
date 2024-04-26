@@ -62,6 +62,8 @@ resource "aws_s3_object" "upload_object" {
 # Create Log bucket
 resource "aws_s3_bucket" "log_bucket" {
   bucket = "tf-log-bucket"
+  acl    = "private" 
+  ignore_public_acls = true
 }
 
 # Add ACL
