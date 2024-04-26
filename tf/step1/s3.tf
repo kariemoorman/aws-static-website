@@ -64,9 +64,19 @@ resource "aws_s3_bucket" "log_bucket" {
   bucket = "tf-log-bucket"
 }
 
+# Add ACL
 resource "aws_s3_bucket_acl" "log_bucket_acl" {
   bucket = aws_s3_bucket.log_bucket.id
   acl    = "log-delivery-write"
+}
+
+# Add versioning
+resource "aws_s3_bucket_versioning" "log_bucket_versioning" {
+  bucket = aws_s3_bucket.log_bucket.id
+
+  versioning_configuration {
+    status = "Enabled"
+  }
 }
 
 # Add logging
