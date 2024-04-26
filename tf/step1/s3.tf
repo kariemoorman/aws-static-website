@@ -76,3 +76,13 @@ resource "aws_s3_bucket_logging" "s3log" {
   target_bucket = aws_s3_bucket.log_bucket.id
   target_prefix = "log/"
 }
+
+# Encrypt S3 bucket using SSE-S3
+resource "aws_s3_bucket_server_side_encryption_configuration" "encrypt" {
+  bucket = aws_s3_bucket.log_bucket.id
+  rule {
+    apply_server_side_encryption_by_default {
+      sse_algorithm = "AES256"
+    }
+  }
+}
