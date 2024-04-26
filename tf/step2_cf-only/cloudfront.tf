@@ -40,6 +40,12 @@ resource "aws_cloudfront_distribution" "cdn_static_site" {
     }
   }
 
+  logging_config {
+    bucket         = aws_s3_bucket.log_bucket.bucket_domain_name
+    include_cookies = false
+    prefix         = "cdn-access-logs/"
+  }
+
   restrictions {
     geo_restriction {
       locations        = []
