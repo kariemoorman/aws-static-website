@@ -62,8 +62,12 @@ resource "aws_s3_object" "upload_object" {
 # Create Log bucket
 resource "aws_s3_bucket" "log_bucket" {
   bucket = "tf-log-bucket"
-  acl    = "private" 
-  ignore_public_acls = true
+}
+
+# Create a block public access configuration
+resource "aws_s3_bucket_public_access_block" "log_block" {
+  bucket = aws_s3_bucket.log_bucket.id
+  ignore_public_acls      = true
 }
 
 # Add ACL
