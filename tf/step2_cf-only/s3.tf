@@ -58,3 +58,16 @@ resource "aws_s3_object" "upload_object" {
   content_type  = "text/html"
   depends_on = [ aws_s3_bucket.week1-bucket ]
 }
+
+# Create Log bucket
+resource "aws_s3_bucket" "log_bucket" {
+  bucket = "tf-log-bucket"
+}
+
+# Add logging
+resource "aws_s3_bucket_logging" "s3log" {
+  bucket = aws_s3_bucket.week1-bucket.id
+
+  target_bucket = aws_s3_bucket.log_bucket.id
+  target_prefix = "log/"
+}
