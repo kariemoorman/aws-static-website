@@ -64,6 +64,11 @@ resource "aws_s3_bucket" "log_bucket" {
   bucket = "tf-log-bucket"
 }
 
+resource "aws_s3_bucket_acl" "log_bucket_acl" {
+  bucket = aws_s3_bucket.log_bucket.id
+  acl    = "log-delivery-write"
+}
+
 # Add logging
 resource "aws_s3_bucket_logging" "s3log" {
   bucket = aws_s3_bucket.week1-bucket.id
